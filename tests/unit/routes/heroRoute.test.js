@@ -22,6 +22,10 @@ test('Hero routes - endpoints test suite', async (t) => {
     }
     const request = {}
     const response = {
+      writeHead: callTracker.calls((status, contentType) => {
+        assert.strictEqual(status, 200)
+        assert.deepStrictEqual(contentType, DEFAULT_HEADER)
+      }),
       write: callTracker.calls((item) => {
         const expected = JSON.stringify({
           results: databaseMock,

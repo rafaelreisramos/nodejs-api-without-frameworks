@@ -10,8 +10,8 @@ I use the new node test library for unit/e2e tests and assert callTracker to che
 
   - [x] it should have an endpoint for storing heroes' data
   - [x] it should have an endpoint for retrieving heroes' data
-  - [ ] it should have an endpoint for updating heroes' data
-  - [ ] it should have an endpoint for deleting heroes' data
+  - [x] it should have an endpoint for updating heroes' data
+  - [x] it should have an endpoint for deleting heroes' data
 
 - Testing
 
@@ -26,7 +26,7 @@ I use the new node test library for unit/e2e tests and assert callTracker to che
 
   - Integration / E2E
     - [x] it should test the endpoint for storing heroes' data
-    - [ ] it should test the endpoint for retrieving heroes' data
-    - [ ] it should test the endpoint for updating heroes' data
-    - [ ] it should test the endpoint for deleting heroes' data
+    - [x] it should test the endpoint for retrieving heroes' data
+    - [x] it should test the endpoint for updating heroes' data
+    - [x] it should test the endpoint for deleting heroes' data
     - [ ] it should test when the application throws an error

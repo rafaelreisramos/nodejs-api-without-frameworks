@@ -16,17 +16,28 @@ const allRoutes = {
   ...heroRoutes,
   default: (_, response) => {
     response.writeHead(404, DEFAULT_HEADER)
-    response.write('ops... not found')
+    response.write(JSON.stringify({ error: 'not found' }))
     return response.end()
   },
 }
+
+const UUID_REGEX =
+  /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
+const UUID_LENGTH = 36
 
 function handler(request, response) {
   const { url, method } = request
   const { pathname } = parse(url, true)
 
-  const key = `${pathname}:${method.toLowerCase()}`
-  console.log(key)
+  let routePath = pathname
+  const pos = pathname.search(UUID_REGEX)
+  if (pos > 0) {
+    const id = pathname.substring(pos, pos + UUID_LENGTH)
+    request.id = id
+    routePath = pathname.replace(`/${id}`, '')
+  }
+  const key = `${routePath}:${method.toLowerCase()}`
+
   const chosen = allRoutes[key] || allRoutes['default']
   return Promise.resolve(chosen(request, response)).catch(
     handlerError(response)
