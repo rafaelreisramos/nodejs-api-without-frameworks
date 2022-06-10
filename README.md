@@ -20,7 +20,7 @@ I use the new node test library for unit/e2e tests and assert callTracker to che
     - [ ] it should test when the application throws an error
     - [ ] it should test all files on the routes layer
     - [ ] it should test all files on the repositories layer
-    - [ ] it should test all files on the factories layer
+    - [x] it should test all files on the factories layer
     - [x] it should test all files on the services layer
     - Plus
       - [ ] it should reach 100% code coverage (it's currently not possible to get code coverage metrics using only the native Node.js, see [c8](https://www.npmjs.com/package/c8) for this task)
