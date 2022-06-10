@@ -18,6 +18,7 @@ I use the new node test library for unit/e2e tests and assert callTracker to che
   - Unit
 
     - [ ] it should test when the application throws an error
+    - [x] it should test all files on the entities
     - [ ] it should test all files on the routes layer
     - [ ] it should test all files on the repositories layer
     - [x] it should test all files on the factories layer
